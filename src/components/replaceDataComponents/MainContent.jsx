@@ -24,7 +24,8 @@ const MainContent = () => {
     const blob = new Blob([contentFileOutputConversionRef.current.value], {
       type: "plain/text",
     });
-    const fileUrl = URL.createObjectURL(blob);
+      const fileUrl = URL.createObjectURL(blob);
+      downloadFileNew.current.classList.add("Show");
     downloadFileNew.current.setAttribute("href", fileUrl);
     downloadFileNew.current.setAttribute(
       "download",
