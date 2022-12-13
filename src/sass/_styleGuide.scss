@@ -1,0 +1,53 @@
+/*Style Guide Content Measurements Begin */
+
+$fontLarge: 138px;
+$fontMedium: clamp(2rem, 1.4595rem + 2.7027vw, 4.5rem);
+$fontMedium2: 42px;
+$fontMedium3: 32px;
+$fontSmall: clamp(0.75rem, 0.6892rem + 0.2703vw, 1rem);
+$fontForm: 26px;
+
+$fontHeadingType: Raleway, Arial, Helvetica, sans-serif;
+$fontHeadingTypeTwo: Beas Neue, Arial, Helvetica, sans-serif;
+$fontBodyType: Raleway, Arial, Helvetica, sans-serif;
+
+h1 {
+  font-family: $fontHeadingType;
+}
+h2 {
+  font-family: $fontHeadingTypeTwo;
+  text-transform: uppercase;
+}
+h3 {
+  font-family: $fontHeadingTypeTwo;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: $fontBodyType;
+  font-size: $fontSmall;
+}
+
+html {
+  --backgroundImage: url("../../public/assets/backgroundImages/cuteCats.webp");
+  --headercolor: #0a0a0a;
+}
+html[data-theme="violet"] {
+  --backgroundImage: url("../../public/assets/backgroundImages/christmasCats.jpg");
+  --headercolor: rgb(60, 6, 69);
+}
+html[data-theme="blue"] {
+  --headercolor: rgb(5, 5, 49);
+}
+html[data-theme="green"] {
+  --headercolor: rgb(15, 39, 14);
+}
+html[data-theme="orange"] {
+  --headercolor: rgb(150, 63, 17);
+}
+html[data-theme="red"] {
+  --headercolor: rgb(110, 5, 17);
+}
+html[data-theme="rainbow"] {
+  --headercolor: #360b54;
+}

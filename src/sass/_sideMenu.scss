@@ -1,0 +1,60 @@
+.sidemenu-Account {
+  background-color: rgb(44, 52, 83);
+}
+
+.sidemenu-Buttons {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 200px;
+  .fileInputContainer {
+    background-color: slategray;
+    color: #fff;
+    height: 60px;
+    outline: lightgray solid 1px;
+    width: 100%;
+    text-align: center;
+
+    label {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+  .fileInputContainer:hover {
+    background-color: lightgrey;
+    color: white;
+  }
+}
+.buttonOne {
+  background-color: slategray;
+  border: none;
+  color: #fff;
+  height: 60px;
+  outline: lightgray solid 1px;
+  padding: 0 15%;
+  text-align: center;
+  width: 100%;
+}
+.buttonOne:hover {
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
+}
+.uploadFileHidden {
+  display: none;
+}
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: goldenrod;
+}
