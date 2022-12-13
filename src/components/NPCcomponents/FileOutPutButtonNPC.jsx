@@ -1,5 +1,6 @@
 const FileOutPutButtonNPC = (props) => {
   const FileOutputNPCLogic = () => {
+    let NameBuilder = props.nameInput.replaceAll(" ", "_");
     if (
       props.contentOutputTargetRef.current.value === undefined
     ) {
@@ -8,7 +9,7 @@ const FileOutPutButtonNPC = (props) => {
       const commands = getUsefulCommands(content);
       let commands_per_npc = props.valueInput;
       console.log(props.valueInput);
-      let nbt_name = props.FileName.split("\\").pop().replace(".txt", "").replace(" ", "_");
+      let nbt_name = props.FileName.split("\\").pop().replace(".txt", "").replaceAll(" ", "_");
       let curSec = 0;
       let NBTdata = getBlockOpener(nbt_name);
       let NPCCount = Math.ceil(commands.length / commands_per_npc);
@@ -56,7 +57,7 @@ const FileOutPutButtonNPC = (props) => {
     }
 
     function getBlockOpener(nbt_name) {
-      return `{Block:{name:"minecraft:moving_block",states:{},version:17959425},Count:1b,Damage:0s,Name:"minecraft:moving_block",WasPickedUp:0b,tag:{display:{Lore:["Â§lÂ§bBuild By: Â§dKitty Shizzî„€","Â§3NBT Tool By: Â§aBrutus314 ","Â§aand Clawsky123î„","Â§9Conversion Tool By: ","Â§eExgioan!!î„‚","Â§fSpecial Thanks To:","Â§6Chronicles765!!    î„ƒ","Â§4Warning: Â§cDont Hold Too","Â§cMany Or You Will Lag!!Â§âˆ†"],Name:"Â§lÂ§dKittys Builds: Â§gÂ§l${nbt_name}"},ench:[{id:28s,lvl:1s}],movingBlock:{name:"minecraft:sea_lantern",states:{},version:17879555},movingEntity:{Occupants:[`;
+      return `{Block:{name:"minecraft:moving_block",states:{},version:17959425},Count:1b,Damage:0s,Name:"minecraft:moving_block",WasPickedUp:0b,tag:{display:{Lore:["Â§lÂ§bBuild By: Â§d${NameBuilder}î„€","Â§3NBT Tool By: Â§aBrutus314 ","Â§aand Clawsky123î„","Â§9Conversion Tool By: ","Â§eExgioan!!î„‚","Â§fSpecial Thanks To:","Â§6Chronicles765!!    î„ƒ","Â§4Warning: Â§cDont Hold Too","Â§cMany Or You Will Lag!!Â§âˆ†"],Name:"Â§lÂ§dKittys Builds: Â§gÂ§l${nbt_name}"},ench:[{id:28s,lvl:1s}],movingBlock:{name:"minecraft:sea_lantern",states:{},version:17879555},movingEntity:{Occupants:[`;
     }
 
     function getBlockCloser() {
@@ -68,7 +69,7 @@ const FileOutPutButtonNPC = (props) => {
     }
 
     function getNPCCloser(section, nbt_name) {
-      return `],"mode" : 0,"text" : "","type" : 1}]",CustomName:"Â§lÂ§dKittys Builds: ${nbt_name}",CustomNameVisible:1b,InterativeText:"Â§cBuild By: Â§dKitty Shizz!!î„€\nÂ§cNBT Tool By: Â§dBrutus314 an Clawsky123!!\nÂ§cConversion Tool By: Â§dExgioan!!\nÂ§cSpecial Thanks To: Â§dChronicles765!!! î„ƒ\nÂ§6Thanks For Trying My ${nbt_name} Build!!!",Persistent:1b,Pos:[],RawtextName:"Â§lÂ§dKittys Builds: ${nbt_name}",Tags:["${nbt_name}${section}"],Variant:3,definitions:["+minecraft:npc"],identifier:"minecraft:npc"},TicksLeftToStay:0}`;
+      return `],"mode" : 0,"text" : "","type" : 1}]",CustomName:"Â§lÂ§d${NameBuilder} Builds: ${nbt_name}",CustomNameVisible:1b,InterativeText:"Â§cBuild By: Â§d${NameBuilder}!!î„€\nÂ§cNBT Tool By: Â§dBrutus314 an Clawsky123!!\nÂ§cConversion Tool By: Â§dExgioan!!\nÂ§cSpecial Thanks To: Â§dChronicles765!!! î„ƒ\nÂ§6Thanks For Trying My ${nbt_name} Build!!!",Persistent:1b,Pos:[],RawtextName:"Â§lÂ§dKittys Builds: ${nbt_name}",Tags:["${nbt_name}${section}"],Variant:3,definitions:["+minecraft:npc"],identifier:"minecraft:npc"},TicksLeftToStay:0}`;
     }
   };
   function commandToNBT(command) {

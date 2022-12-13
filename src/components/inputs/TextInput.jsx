@@ -1,6 +1,11 @@
 const TextInput = (props) => {
+
+  const handleUserInput = (e) => {
+    props.setNameInput(`${e.target.value}`);
+  };
+
     return (
-    <input onClick={props.TextInputFunction}>{props.TextInputValue}</input>
+    <input type="text" value={props.nameInput} onChange={handleUserInput}/>
   );
 };
 

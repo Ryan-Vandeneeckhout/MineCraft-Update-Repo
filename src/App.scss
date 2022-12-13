@@ -71,8 +71,17 @@ main {
   text-align: center;
 }
 .downloadButton {
+  align-items: center;
+  background-color: slategray;
+  color: white;
   display: none;
+  height: 60px;
+  justify-content: center;
+  padding: 0 15%;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
 }
 .Show {
-  display: block;
+  display: flex;
 }

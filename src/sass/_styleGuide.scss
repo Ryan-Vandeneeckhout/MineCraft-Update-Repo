@@ -23,11 +23,11 @@ h3 {
   text-transform: uppercase;
 }
 
-p {
+p,
+a {
   font-family: $fontBodyType;
   font-size: $fontSmall;
 }
-
 html {
   --backgroundImage: url("../../public/assets/backgroundImages/cuteCats.webp");
   --headercolor: #0a0a0a;

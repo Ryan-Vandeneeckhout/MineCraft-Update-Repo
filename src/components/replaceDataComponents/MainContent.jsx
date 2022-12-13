@@ -7,6 +7,7 @@ import FileOutPutButtonOne from "./FileOutPutButtonOne";
 import FileOutPutButtonTwo from "./FileOutPutButtonTwo";
 import FileOutPutButtonNPC from "../NPCcomponents/FileOutPutButtonNPC";
 import NPCInput from "../inputs/NumberInput";
+import TextInput from "../inputs/TextInput";
 
 const MainContent = () => {
   const inputFileRef = useRef(null);
@@ -17,15 +18,16 @@ const MainContent = () => {
   const [, setContentOutputTargetHoldData, contentOutputTargetHoldDataRef] =
     useState(null);
   const [filename, setFileName] = useState(null);
-  const [valueInput, setValueInput] = useState(350);
+    const [valueInput, setValueInput] = useState(400);
+    const [nameInput, setNameInput] = useState("Kitty_Shizz");
   const downloadFileNew = useRef(null);
 
   function downloadFile() {
     const blob = new Blob([contentFileOutputConversionRef.current.value], {
       type: "plain/text",
     });
-      const fileUrl = URL.createObjectURL(blob);
-      downloadFileNew.current.classList.add("Show");
+    const fileUrl = URL.createObjectURL(blob);
+    downloadFileNew.current.classList.add("Show");
     downloadFileNew.current.setAttribute("href", fileUrl);
     downloadFileNew.current.setAttribute(
       "download",
@@ -54,14 +56,19 @@ const MainContent = () => {
           setContentOutputTargetHoldData={contentOutputTargetHoldDataRef}
           contentFileOutputConversionRef={contentFileOutputConversionRef}
         />
-        <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
+              <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
+              <TextInput nameInput={nameInput} setNameInput={setNameInput}/>
         <FileOutPutButtonNPC
           contentOutputTargetRef={contentFileOutputConversionRef}
           contentOutputTargetHoldData={contentOutputTargetHoldDataRef}
           FileName={filename}
           downloadFile={downloadFile}
-          valueInput={valueInput}
+                  valueInput={valueInput}
+                  nameInput={nameInput}
         />
+        <a className="downloadButton" href="Wait" ref={downloadFileNew}>
+          Download Completed File
+        </a>
       </div>
       <div className="wrapper-Main">
         <h3>File Input Preview</h3>
@@ -74,9 +81,6 @@ const MainContent = () => {
           TextInputValue="Conversion preview..."
           TextAreaInputRef={contentFileOutputConversionRef}
         />
-        <a className="downloadButton" href="Wait" ref={downloadFileNew}>
-          Download Completed File
-        </a>
       </div>
     </main>
   );
