@@ -85,3 +85,18 @@ main {
 .Show {
   display: flex;
 }
+input,
+label {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #1c1a27;
+  width: 100%;
+  text-align: center;
+}
+input:focus {
+}
+label {
+  outline: none;
+}

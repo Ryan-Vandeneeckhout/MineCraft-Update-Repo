@@ -1,11 +1,18 @@
 const TextInput = (props) => {
-
   const handleUserInput = (e) => {
     props.setNameInput(`${e.target.value}`);
   };
 
-    return (
-    <input type="text" value={props.nameInput} onChange={handleUserInput}/>
+  return (
+    <>
+      <label htmlFor="builder-Name-Input">Creator Name:</label>
+      <input
+        aria-label="builder-Name-Input"
+        type="text"
+        value={props.nameInput}
+        onChange={handleUserInput}
+      />
+    </>
   );
 };
 

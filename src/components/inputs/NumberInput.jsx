@@ -5,6 +5,7 @@ export default function NPCInput(props) {
 
   return (
     <div className="labelsNPC">
+      <label htmlFor="NPC input">Commands per NPC:</label>
       <input
         required
         aria-label="NPC input"
@@ -15,7 +16,6 @@ export default function NPCInput(props) {
         min={120}
         max={1000}
       />
-      <label htmlFor="NPC input">Commands per NPC:</label>
     </div>
   );
 }
