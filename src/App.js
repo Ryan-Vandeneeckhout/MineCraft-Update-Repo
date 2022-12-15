@@ -9,7 +9,7 @@ function App() {
       </div>
       <div className="wrapper-main-Content">
         <header className="App-header">
-          <h1>Block State Conversion: </h1>
+          <h1>Block State Conversion: Version 1.2 </h1>
         </header>
         <MainContent/>
       </div>

@@ -6,10 +6,8 @@ const FileOutPutButtonNPC = (props) => {
     ) {
     } else {
       let content = props.contentOutputTargetHoldDataRef;
-      console.log(props.contentOutputTargetHoldDataRef)
       const commands = getUsefulCommands(content);
       let commands_per_npc = parseInt(props.valueInput);
-      console.log(props.valueInput);
       let nbt_name = props.FileName.split("\\").pop().replace(".txt", "").replaceAll(" ", "_");
       let curSec = 0;
       let NBTdata = getBlockOpener(nbt_name);
