@@ -14,7 +14,7 @@
   background-color: white;
   display: flex;
   flex-direction: row;
-  outline: solid grey 1px;
+  outline: solid rgb(86, 86, 86) 1px;
   padding: 0 150px;
   width: 100%;
 }
@@ -24,7 +24,7 @@ main {
   flex-direction: row;
   min-height: 100%;
   min-width: 800px;
-  outline: solid rgb(86, 86, 86) 1px;
+  border-right: solid rgb(86, 86, 86) 1px;
   width: 45%;
   .wrapper-Main {
     padding: 5% 5%;

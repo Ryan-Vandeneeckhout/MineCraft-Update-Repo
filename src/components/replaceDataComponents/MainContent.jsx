@@ -15,11 +15,14 @@ const MainContent = () => {
   const stepOneRef = useRef(null);
   const stepTwoRef = useRef(null);
   const contentFileOutputConversionRef = useRef(null);
-  const [, setContentOutputTargetHoldData, contentOutputTargetHoldDataRef] =
-    useState(null);
+  const [
+    contentOutput,
+    setContentOutputTargetHoldData,
+    contentOutputTargetHoldDataRef,
+  ] = useState(null);
   const [filename, setFileName] = useState(null);
-    const [valueInput, setValueInput] = useState(400);
-    const [nameInput, setNameInput] = useState("Kitty_Shizz");
+  const [valueInput, setValueInput] = useState(400);
+  const [nameInput, setNameInput] = useState("Kitty_Shizz");
   const downloadFileNew = useRef(null);
 
   function downloadFile() {
@@ -55,16 +58,17 @@ const MainContent = () => {
           contentOutputTargetRef={contentOutputTargetRef}
           setContentOutputTargetHoldData={contentOutputTargetHoldDataRef}
           contentFileOutputConversionRef={contentFileOutputConversionRef}
+          contentOutput={contentOutputTargetHoldDataRef}
         />
-              <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
-              <TextInput nameInput={nameInput} setNameInput={setNameInput}/>
+        <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
+        <TextInput nameInput={nameInput} setNameInput={setNameInput} />
         <FileOutPutButtonNPC
           contentOutputTargetRef={contentFileOutputConversionRef}
-          contentOutputTargetHoldData={contentOutputTargetHoldDataRef}
+          contentOutputTargetHoldDataRef={contentOutput}
           FileName={filename}
           downloadFile={downloadFile}
-                  valueInput={valueInput}
-                  nameInput={nameInput}
+          valueInput={valueInput}
+          nameInput={nameInput}
         />
         <a className="downloadButton" href="Wait" ref={downloadFileNew}>
           Download Completed File

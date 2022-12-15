@@ -2069,6 +2069,7 @@ const FileOutPutButtonTwo = (props) => {
     props.stepOneRef.current.classList.add("green");
     props.stepOneRef.current.classList.remove("red", "yellow");
     props.contentOutputTargetRef.current.value = H;
+ props.contentOutput.current = H; 
   };
 
   return (
