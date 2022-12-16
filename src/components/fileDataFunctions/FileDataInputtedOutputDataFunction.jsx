@@ -50,13 +50,13 @@ const FileDataInputtedOutputDataFunction = (props) => {
   return (
     <>
     <div className="fileInputContainer">
-      <label className="uploadFileLabel" htmlFor="files" ref={inputButton}>Upload File</label>
+      <label className="uploadFileLabel white" htmlFor="files" ref={inputButton}>Upload File</label>
       <input className="uploadFileHidden" type="file" id="files" onChange={getFile} ref={inputFileRef} />
       
       </div>
 
       {inputSuccess ? 
-        <p className="fileInputPara">{inputFileRef.current.value.split("\\").pop()}</p> : <p className="fileInputPara">No File Selected</p>}
+        <p className="fileInputPara">File Selected - {inputFileRef.current.value.split("\\").pop()}</p> : <p className="fileInputPara">No File Selected</p>}
     </>
   );
 };

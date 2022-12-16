@@ -5,7 +5,8 @@ const FileOutPutButtonNPC = (props) => {
       props.contentOutputTargetRef.current.value === undefined
     ) {
     } else {
-      let content = props.contentOutputTargetHoldDataRef;
+      let content = props.contentOutputTargetHoldDataRef.current;
+      console.log(content);
       const commands = getUsefulCommands(content);
       let commands_per_npc = parseInt(props.valueInput);
       let nbt_name = props.FileName.split("\\").pop().replace(".txt", "").replaceAll(" ", "_");

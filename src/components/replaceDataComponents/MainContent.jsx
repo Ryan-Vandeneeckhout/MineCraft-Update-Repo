@@ -4,7 +4,6 @@ import FileDataInputtedOutputDataFunction from "../fileDataFunctions/FileDataInp
 
 import TextAreaInput from "../inputs/TextAreaInput";
 import FileOutPutButtonOne from "./FileOutPutButtonOne";
-import FileOutPutButtonTwo from "./FileOutPutButtonTwo";
 import FileOutPutButtonNPC from "../NPCcomponents/FileOutPutButtonNPC";
 import NPCInput from "../inputs/NumberInput";
 import TextInput from "../inputs/TextInput";
@@ -15,15 +14,13 @@ const MainContent = () => {
   const stepOneRef = useRef(null);
   const stepTwoRef = useRef(null);
   const contentFileOutputConversionRef = useRef(null);
-  const [
-    contentOutput,
-    setContentOutputTargetHoldData,
-    contentOutputTargetHoldDataRef,
-  ] = useState(null);
-  const [filename, setFileName] = useState(null);
+  const [, setContentOutputTargetHoldData, contentOutputTargetHoldDataRef] =
+    useState(null);
+  const [filename, setFileName] = useState("No File Specified");
   const [valueInput, setValueInput] = useState(400);
   const [nameInput, setNameInput] = useState("Kitty_Shizz");
   const downloadFileNew = useRef(null);
+  const downloadFileNewNumbered = useRef(null);
 
   function downloadFile() {
     const blob = new Blob([contentFileOutputConversionRef.current.value], {
@@ -32,10 +29,42 @@ const MainContent = () => {
     const fileUrl = URL.createObjectURL(blob);
     downloadFileNew.current.classList.add("Show");
     downloadFileNew.current.setAttribute("href", fileUrl);
-    downloadFileNew.current.setAttribute(
-      "download",
-      filename.split("\\").pop().replace(".txt", " Optimized Build.txt")
-    );
+    if (filename.includes(".txt")) {
+      downloadFileNew.current.setAttribute(
+        "download",
+        filename.split("\\").pop().replace(".txt", " Optimized Build.txt")
+      );
+    } else {
+      downloadFileNew.current.setAttribute(
+        "download",
+        filename
+          .split("\\")
+          .pop()
+          .replace(".mcfunction", " Optimized Build.mcfunction")
+      );
+    }
+  }
+  function downloadFileNumber() {
+    const blob = new Blob([contentOutputTargetHoldDataRef.current], {
+      type: "plain/text",
+    });
+    const fileUrl = URL.createObjectURL(blob);
+    downloadFileNewNumbered.current.setAttribute("href", fileUrl);
+
+    if (filename.includes(".txt")) {
+      downloadFileNewNumbered.current.setAttribute(
+        "download",
+        filename.split("\\").pop().replace(".txt", " Optimized Build.txt")
+      );
+    } else {
+      downloadFileNewNumbered.current.setAttribute(
+        "download",
+        filename
+          .split("\\")
+          .pop()
+          .replace(".mcfunction", " Optimized Build.mcfunction")
+      );
+    }
   }
   return (
     <main>
@@ -50,28 +79,30 @@ const MainContent = () => {
         <FileOutPutButtonOne
           stepOneRef={stepOneRef}
           contentOutputTargetRef={contentOutputTargetRef}
-          setContentOutputTargetHoldData={setContentOutputTargetHoldData}
           contentFileOutputConversionRef={contentFileOutputConversionRef}
+          contentOutput={setContentOutputTargetHoldData}
+          downloadFileNumber={downloadFileNumber}
         />
-        <FileOutPutButtonTwo
-          stepOneRef={stepTwoRef}
-          contentOutputTargetRef={contentOutputTargetRef}
-          setContentOutputTargetHoldData={contentOutputTargetHoldDataRef}
-          contentFileOutputConversionRef={contentFileOutputConversionRef}
-          contentOutput={contentOutputTargetHoldDataRef}
-        />
+        <TextInput nameInput={filename} setNameInput={setFileName} labelText={"Edit filename:"}/>
+        <a
+          className="downloadButton Show"
+          href="Wait"
+          ref={downloadFileNewNumbered}
+        >
+          Download Converted Number File
+        </a>
         <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
-        <TextInput nameInput={nameInput} setNameInput={setNameInput} />
+              <TextInput nameInput={nameInput} setNameInput={setNameInput} labelText={"Edit Creator Name:"} />
         <FileOutPutButtonNPC
           contentOutputTargetRef={contentFileOutputConversionRef}
-          contentOutputTargetHoldDataRef={contentOutput}
+          contentOutputTargetHoldDataRef={contentOutputTargetHoldDataRef}
           FileName={filename}
           downloadFile={downloadFile}
           valueInput={valueInput}
           nameInput={nameInput}
         />
         <a className="downloadButton" href="Wait" ref={downloadFileNew}>
-          Download Completed File
+          Download Completed NPC File
         </a>
       </div>
       <div className="wrapper-Main">

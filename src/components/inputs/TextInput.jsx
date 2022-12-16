@@ -5,7 +5,7 @@ const TextInput = (props) => {
 
   return (
     <>
-      <label htmlFor="builder-Name-Input">Creator Name:</label>
+      <label htmlFor="builder-Name-Input">{props.labelText}</label>
       <input
         aria-label="builder-Name-Input"
         type="text"
