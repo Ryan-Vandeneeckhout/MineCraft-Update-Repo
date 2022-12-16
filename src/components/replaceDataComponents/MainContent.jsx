@@ -34,6 +34,12 @@ const MainContent = () => {
         "download",
         filename.split("\\").pop().replace(".txt", " Optimized Build.txt")
       );
+    }
+    if (!filename.includes(".")) {
+      downloadFileNew.current.setAttribute(
+        "download",
+        filename.split("\\").pop() + " Optimized Build.txt"
+      );
     } else {
       downloadFileNew.current.setAttribute(
         "download",
@@ -54,7 +60,16 @@ const MainContent = () => {
     if (filename.includes(".txt")) {
       downloadFileNewNumbered.current.setAttribute(
         "download",
-        filename.split("\\").pop().replace(".txt", " Optimized Build.txt")
+        filename
+          .split("\\")
+          .pop()
+          .replace(".txt", " Optimized BedRock Build.txt")
+      );
+    }
+    if (!filename.includes(".")) {
+      downloadFileNewNumbered.current.setAttribute(
+        "download",
+        filename.split("\\").pop() + " Optimized BedRock Build.txt"
       );
     } else {
       downloadFileNewNumbered.current.setAttribute(
@@ -62,7 +77,7 @@ const MainContent = () => {
         filename
           .split("\\")
           .pop()
-          .replace(".mcfunction", " Optimized Build.mcfunction")
+          .replace(".mcfunction", " Optimized BedRock Build.mcfunction")
       );
     }
   }
@@ -83,7 +98,11 @@ const MainContent = () => {
           contentOutput={setContentOutputTargetHoldData}
           downloadFileNumber={downloadFileNumber}
         />
-        <TextInput nameInput={filename} setNameInput={setFileName} labelText={"Edit filename:"}/>
+        <TextInput
+          nameInput={filename}
+          setNameInput={setFileName}
+          labelText={"Edit filename:"}
+        />
         <a
           className="downloadButton Show"
           href="Wait"
@@ -92,7 +111,11 @@ const MainContent = () => {
           Download Converted Number File
         </a>
         <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
-              <TextInput nameInput={nameInput} setNameInput={setNameInput} labelText={"Edit Creator Name:"} />
+        <TextInput
+          nameInput={nameInput}
+          setNameInput={setNameInput}
+          labelText={"Edit Creator Name:"}
+        />
         <FileOutPutButtonNPC
           contentOutputTargetRef={contentFileOutputConversionRef}
           contentOutputTargetHoldDataRef={contentOutputTargetHoldDataRef}

@@ -1,3 +1,5 @@
+import { CommandList } from "./CommandList";
+
 const FileOutPutButtonNPC = (props) => {
   const FileOutputNPCLogic = () => {
     let NameBuilder = props.nameInput.replaceAll(" ", "_");
@@ -5,11 +7,11 @@ const FileOutPutButtonNPC = (props) => {
       props.contentOutputTargetRef.current.value === undefined
     ) {
     } else {
-      let content = props.contentOutputTargetHoldDataRef.current;
+      let content = String(props.contentOutputTargetHoldDataRef.current);
       console.log(content);
       const commands = getUsefulCommands(content);
       let commands_per_npc = parseInt(props.valueInput);
-      let nbt_name = props.FileName.split("\\").pop().replace(".txt", "").replaceAll(" ", "_");
+      let nbt_name = props.FileName.split("\\").pop().replace(".txt", "").replace(".mcfunction", "").replaceAll(" ", "_");
       let curSec = 0;
       let NBTdata = getBlockOpener(nbt_name);
       let NPCCount = Math.ceil(commands.length / commands_per_npc);
@@ -49,9 +51,7 @@ const FileOutPutButtonNPC = (props) => {
         .map((x) => x.replace(/^\//, "").trim())
         .filter((x) => {
           return (
-            x.search("setblock") === 0 ||
-            x.search("fill") === 0 ||
-            x.search("summon") === 0
+            x.search(CommandList) === 0 
           );
         });
     }
