@@ -85,7 +85,7 @@ main {
 }
 .downloadButton {
   align-items: center;
-  background-color: slategray;
+  background-color: goldenrod;
   color: white;
   display: none;
   height: 60px;
@@ -94,6 +94,15 @@ main {
   text-align: center;
   text-decoration: none;
   width: 100%;
+}
+
+.downloadButton:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.downloadButton:hover a {
+  color: black;
 }
 .Show {
   display: flex;

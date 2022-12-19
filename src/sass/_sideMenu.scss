@@ -10,8 +10,8 @@
   outline: none;
   border: none;
   .fileInputContainer {
-    background-color: slategray;
-    border-bottom: solid 2px gray;
+    background-color: goldenrod;
+    border-bottom: solid 1px darkgray;
     color: #fff;
     height: 60px;
     width: 100%;
@@ -29,7 +29,7 @@
     }
     label:hover {
       color: #000;
-      background-color: whitesmoke;
+      background-color: lightgrey;
     }
   }
   .fileInputContainer:hover {
@@ -38,7 +38,7 @@
   }
 }
 .buttonOne {
-  background-color: slategray;
+  background-color: goldenrod;
   border: none;
   color: #fff;
   height: 60px;
@@ -50,6 +50,10 @@
   background-color: lightgray;
   color: black;
   cursor: pointer;
+}
+
+.buttonOne:hover button {
+  color: black;
 }
 .uploadFileHidden {
   display: none;
