@@ -11,15 +11,19 @@
 }
 
 .App-header {
-  background-color: white;
+  align-items: center;
+  background-color: var(--headercolor);
+  color: white;
   display: flex;
   flex-direction: row;
-  outline: solid rgb(86, 86, 86) 1px;
+  justify-content: space-between;
+  outline: solid gray 1px;
   padding: 0 150px;
+  height: 60px;
   width: 100%;
 }
 main {
-  background-color: rgb(193, 204, 215);
+  background-color: var(--fileTextAreaContainer);
   display: flex;
   flex-direction: row;
   min-height: 100%;
@@ -42,16 +46,25 @@ main {
   min-height: 100%;
   width: 100%;
 }
+.buttonOne {
+  align-items: center;
+  display: flex;
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+}
 .themeMenu {
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0;
-  padding-top: 25%;
   display: none;
 
   button {
-    width: 200px;
+    width: 100%;
     height: 60px;
     color: white;
     border: none;
@@ -59,13 +72,12 @@ main {
     justify-content: space-between;
     padding: 0 15%;
     align-items: center;
-    margin: 2% 0;
   }
   button:hover {
     background-color: white;
     color: black;
     cursor: pointer;
-    outline: solid black 3px;
+    outline: solid black 1px;
   }
 }
 .fileInputPara {
@@ -90,7 +102,7 @@ input,
 label {
   display: flex;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 15px 20px;
   font-size: 1.2em;
   color: #1c1a27;
   width: 100%;
@@ -98,11 +110,59 @@ label {
   border-bottom: 1px grey solid;
   text-align: center;
 }
-input:focus {
+
+input:hover {
+  background-color: lightgray;
+}
+.fontAweIconUpload {
+  margin-right: 20px;
 }
 a {
-  border-top: solid white 1px;
+  text-decoration: none;
+  color: white;
 }
 .white {
   color: white;
+}
+.sideMenu {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 25vw;
+  max-width: 300px;
+  min-width: 250px;
+  align-items: center;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 60px;
+  z-index: 999;
+  background-color: var(--sideMenucolor);
+  border-left: solid grey 1px;
+  outline: solid grey 1px;
+
+  ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  button {
+    width: 100%;
+    height: 60px;
+    color: white;
+    background-color: var(--sideMenucolor);
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15%;
+    align-items: center;
+  }
+  button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: solid black 3px;
+  }
 }

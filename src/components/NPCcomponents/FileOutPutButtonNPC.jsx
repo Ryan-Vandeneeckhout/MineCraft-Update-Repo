@@ -1,17 +1,20 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CommandList } from "./CommandList";
 
 const FileOutPutButtonNPC = (props) => {
   const FileOutputNPCLogic = () => {
     let NameBuilder = props.nameInput.replaceAll(" ", "_");
-    if (
-      props.contentOutputTargetRef.current.value === undefined
-    ) {
+    if (props.contentOutputTargetRef.current.value === undefined) {
     } else {
       let content = String(props.contentOutputTargetHoldDataRef.current);
       console.log(content);
       const commands = getUsefulCommands(content);
       let commands_per_npc = parseInt(props.valueInput);
-      let nbt_name = props.FileName.split("\\").pop().replace(".txt", "").replace(".mcfunction", "").replaceAll(" ", "_");
+      let nbt_name = props.FileName.split("\\")
+        .pop()
+        .replace(".txt", "")
+        .replace(".mcfunction", "")
+        .replaceAll(" ", "_");
       let curSec = 0;
       let NBTdata = getBlockOpener(nbt_name);
       let NPCCount = Math.ceil(commands.length / commands_per_npc);
@@ -50,9 +53,7 @@ const FileOutPutButtonNPC = (props) => {
         .split("\n")
         .map((x) => x.replace(/^\//, "").trim())
         .filter((x) => {
-          return (
-            x.search(CommandList) === 0 
-          );
+          return x.search(CommandList) === 0;
         });
     }
 
@@ -79,9 +80,10 @@ const FileOutPutButtonNPC = (props) => {
     });
   }
   return (
-    <button className="buttonOne yellow" onClick={FileOutputNPCLogic}>
-      Convert File to NPC
-    </button>
+    <div className="buttonOne yellow">
+      <FontAwesomeIcon className="fontAweIcon" icon="fa-download" />
+      <button onClick={FileOutputNPCLogic}>Convert File to NPC</button>{" "}
+    </div>
   );
 };
 export default FileOutPutButtonNPC;

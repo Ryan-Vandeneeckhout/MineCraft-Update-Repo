@@ -1,5 +1,5 @@
 footer {
-  background-color: black;
+  background-color: var(--credits);
   outline: solid 1px grey;
   color: white;
   display: flex;
@@ -7,6 +7,7 @@ footer {
   position: absolute;
   width: 100%;
   bottom: 0;
+  z-index: 1000;
 
   .wrapper-footer {
     padding: 0;

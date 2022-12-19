@@ -3,16 +3,17 @@
 }
 
 .sidemenu-Buttons {
-  background-color: whitesmoke;
+  background-color: var(--sideMenuButtonsColor);
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  width: 200px;
+  outline: none;
+  border: none;
   .fileInputContainer {
     background-color: slategray;
+    border-bottom: solid 2px gray;
     color: #fff;
     height: 60px;
-    outline: lightgray solid 1px;
     width: 100%;
     text-align: center;
 
@@ -23,6 +24,12 @@
       justify-content: center;
       width: 100%;
       cursor: pointer;
+      outline: none;
+      border: none;
+    }
+    label:hover {
+      color: #000;
+      background-color: whitesmoke;
     }
   }
   .fileInputContainer:hover {
@@ -35,7 +42,6 @@
   border: none;
   color: #fff;
   height: 60px;
-  outline: lightgray solid 1px;
   padding: 0 15%;
   text-align: center;
   width: 100%;

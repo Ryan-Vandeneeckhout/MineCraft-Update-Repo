@@ -7,6 +7,7 @@ import FileOutPutButtonOne from "./FileOutPutButtonOne";
 import FileOutPutButtonNPC from "../NPCcomponents/FileOutPutButtonNPC";
 import NPCInput from "../inputs/NumberInput";
 import TextInput from "../inputs/TextInput";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MainContent = () => {
   const inputFileRef = useRef(null);
@@ -103,13 +104,13 @@ const MainContent = () => {
           setNameInput={setFileName}
           labelText={"Edit filename:"}
         />
-        <a
-          className="downloadButton Show"
-          href="Wait"
-          ref={downloadFileNewNumbered}
-        >
-          Download Converted Number File
-        </a>
+        <div className="downloadButton Show">
+          <FontAwesomeIcon className="fontAweIcon" icon="fa-download" />
+          <a href="Wait" ref={downloadFileNewNumbered}>
+            Download Converted Bedrock ID File:
+          </a>
+        </div>
+
         <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
         <TextInput
           nameInput={nameInput}

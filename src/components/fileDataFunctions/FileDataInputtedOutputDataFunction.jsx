@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const FileDataInputtedOutputDataFunction = (props) => {
   const inputFileRef = useRef(null);
@@ -50,7 +51,7 @@ const FileDataInputtedOutputDataFunction = (props) => {
   return (
     <>
     <div className="fileInputContainer">
-      <label className="uploadFileLabel white" htmlFor="files" ref={inputButton}>Upload File</label>
+      <label className="uploadFileLabel white" htmlFor="files" ref={inputButton}><FontAwesomeIcon className="fontAweIconUpload" icon="fa-upload" /> Upload File </label>
       <input className="uploadFileHidden" type="file" id="files" onChange={getFile} ref={inputFileRef} />
       
       </div>
