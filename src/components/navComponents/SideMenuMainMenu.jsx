@@ -11,7 +11,7 @@ const SideMenuMainMenu = (props) => {
             <button key={index} onClick={() => { props.setMainMenu(false); props.setThemeMenu(item.ThemeSetting === 'true'); props.setMusicMenu(item.MusicSetting === 'true')}}>
             <span>  
               <FontAwesomeIcon
-                className="menuItem"
+                className="menuItem fontAweIconSideMenu"
                 icon={[
                   `${item.IconPicturePrefix}`,
                   `${item.IconPicture}`,
