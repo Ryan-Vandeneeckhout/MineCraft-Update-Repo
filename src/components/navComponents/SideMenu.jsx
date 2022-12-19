@@ -9,12 +9,17 @@ const SideMenu = (props) => {
   const [musicMenuState, setMusicMenu] = useState(false);
 
   return (
-    <section className={`sideMenu${props.mobileNav ? " smoothClosed" : " smoothShown"}`}>
+    <section
+      className={`sideMenu${
+        props.mobileNav ? " smoothClosed" : " smoothShown"
+      }`}
+    >
       <ul className={`mainMenu${mainMenushow ? " opened" : " closed"}`}>
         <SideMenuMainMenu
           setMainMenu={setMainMenu}
           setThemeMenu={setThemeMenu}
           setMusicMenu={setMusicMenu}
+          musicMenuState={musicMenuState}
         />
       </ul>
 
@@ -25,13 +30,11 @@ const SideMenu = (props) => {
             setThemeMenu(false);
             setMusicMenu(false);
           }}
-         
         >
           Main Menu
         </button>
         {themeMenuState && <ThemeMenuChanger themeMenuState={themeMenuState} />}
-   
-      </ul>        
+      </ul>
     </section>
   );
 };
