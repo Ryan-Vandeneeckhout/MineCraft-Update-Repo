@@ -129,7 +129,7 @@ const MainContent = () => {
           Download Completed NPC File
         </a>
       </div>
-      <div className="wrapper-Main uploadFileHidden">
+      <div className="wrapper-Main">
         <h3>File Input Preview</h3>
         <TextAreaInput
           TextInputValue="Preview your unmodified file here..."
