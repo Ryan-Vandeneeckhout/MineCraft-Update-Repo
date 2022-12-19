@@ -1,7 +1,10 @@
+import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CommandList } from "./CommandList";
 
 const FileOutPutButtonNPC = (props) => {
+
+  const buttonNPCRef = useRef(null); 
   const FileOutputNPCLogic = () => {
     let NameBuilder = props.nameInput.replaceAll(" ", "_");
     if (props.contentOutputTargetRef.current.value === undefined) {
@@ -46,6 +49,8 @@ const FileOutPutButtonNPC = (props) => {
       NBTdata += getBlockCloser();
       props.contentOutputTargetRef.current.value = NBTdata;
       props.downloadFile();
+      buttonNPCRef.current.classList.add("green");
+      buttonNPCRef.current.classList.remove("red", "yellow");
     }
 
     function getUsefulCommands(content) {
@@ -80,7 +85,7 @@ const FileOutPutButtonNPC = (props) => {
     });
   }
   return (
-    <div className="buttonOne yellow">
+    <div ref={buttonNPCRef} className="buttonOne yellow">
       <FontAwesomeIcon className="fontAweIcon" icon="fa-download" />
       <button onClick={FileOutputNPCLogic}>Convert File to NPC</button>{" "}
     </div>

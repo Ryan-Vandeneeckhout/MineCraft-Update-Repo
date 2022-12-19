@@ -104,9 +104,9 @@ const MainContent = () => {
           setNameInput={setFileName}
           labelText={"Edit filename:"}
         />
-        <div className="downloadButton Show">
+        <div className="downloadButton yellow Show">
           <FontAwesomeIcon className="fontAweIcon" icon="fa-download" />
-          <a href="Wait" ref={downloadFileNewNumbered}>
+          <a href="#downloadBedrock" ref={downloadFileNewNumbered}>
             Download Converted Bedrock ID File:
           </a>
         </div>
@@ -125,7 +125,7 @@ const MainContent = () => {
           valueInput={valueInput}
           nameInput={nameInput}
         />
-        <a className="downloadButton" href="Wait" ref={downloadFileNew}>
+        <a className="downloadButton" href="#downloadNPC" ref={downloadFileNew}>
           Download Completed NPC File
         </a>
       </div>

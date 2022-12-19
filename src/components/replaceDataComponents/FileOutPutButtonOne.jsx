@@ -23,11 +23,9 @@ const FileOutPutButtonOne = (props) => {
   };
 
   return (
-    <div className="buttonOne" onClick={FileTest}>
+    <div ref={props.stepOneRef} className="buttonOne yellow" onClick={FileTest}>
       <FontAwesomeIcon className="fontAweIcon" icon="fa-exchange" />
-      <button ref={props.stepOneRef} >
-        Bedrock ID Conversion:
-      </button>
+      <button>Bedrock ID Conversion:</button>
     </div>
   );
 };
